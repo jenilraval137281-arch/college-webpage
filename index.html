@@ -1,0 +1,592 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Marwadi University</title>
+    <style>
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #0056b3;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        list-style: 15px 0;
+        padding: 15px 0;
+        margin: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-family: sans-serif;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: goldenrod;
+      }
+
+      .college-banner {
+        height: 450px;
+        background-image: url("https://www.careermarg.com/uploads/college-image/t-1648985762-marwadi-university-mu-rajkot-rajkot.jpeg");
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .uni-logo {
+        height: 80px;
+        margin-bottom: 15px;
+      }
+
+      .college-banner h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+
+      .college-banner p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+      }
+
+      .about-section {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        font-family: sans-serif;
+        line-height: 1.6;
+      }
+
+      .content-block {
+        margin-bottom: 30px;
+      }
+
+      .about-section h2 {
+        color: #333;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 10px;
+      }
+
+      .vision-mission-section {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-family: sans-serif;
+      }
+
+      .vision-card {
+        width: 31%;
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .vision-card h2 {
+        color: #0056b3;
+        margin-top: 0;
+        font-size: 1.5rem;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 8px;
+      }
+
+      .vision-card p {
+        color: #555;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .pso-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin: 30px 0;
+      }
+
+      .pso-card {
+        width: 45%;
+        min-width: 280px;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 24px;
+        margin: 10px;
+        box-sizing: border-box;
+      }
+
+      .pso-section h2 {
+        text-align: center;
+        font-family: sans-serif;
+        color: #222;
+      }
+
+      .pso-card h3 {
+        color: #0056b3;
+        font-family: sans-serif;
+        margin-top: 0;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+      }
+
+      .pso-card p {
+        color: #555;
+        font-family: sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .courses-section {
+        width: 90%;
+        max-width: 950px;
+        margin: 40px auto;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .courses-section h2 {
+        text-align: center;
+        color: #1a1a1a;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        background-color: #ffffff;
+      }
+
+      th,
+      td {
+        border: 1px solid #e0e0e0;
+        padding: 16px 20px;
+        text-align: left;
+        line-height: 1.5;
+      }
+
+      th {
+        background-color: #0056b3;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      td strong {
+        color: #0056b3;
+        font-size: 1rem;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fcfcfc;
+      }
+
+      td:first-child {
+        border-left: 4px solid #0056b3;
+      }
+
+      .gallery-section {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        font-family: sans-serif;
+      }
+
+      .gallery-section h2 {
+        text-align: center;
+        color: #222;
+        margin-bottom: 30px;
+      }
+
+      .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .gallery-container img {
+        width: 31%;
+        min-width: 280px;
+        height: 220px;
+        border-radius: 8px;
+        object-fit: cover;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-container img:hover {
+        transform: scale(1.03);
+      }
+
+      .recruiters-section {
+        width: 90%;
+        max-width: 1200px;
+        margin: 50px auto;
+        font-family: sans-serif;
+      }
+
+      .recruiters-section h2 {
+        text-align: center;
+        color: #222;
+        margin-bottom: 35px;
+      }
+
+      .recruiters-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      .recruiter-card {
+        width: 30%;
+        min-width: 260px;
+        height: 140px;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .recruiter-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      footer {
+        background-color: #0056b3;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-family: sans-serif;
+      }
+
+      .footer-content address {
+        font-style: normal;
+        margin-bottom: 10px;
+      }
+
+      .footer-content p {
+        margin: 5px 0;
+      }
+
+      .footer-content a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-copyright {
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#pso">PSO</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#recruiters">Recruiters</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="college-banner" id="home">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe4TEtMpnhGTv-4T9Xuwk4kkNWi9w7tAhKSJu0NchGyGe3ZVp6tLFxGA&s=10"
+        alt="MU Logo"
+        class="uni-logo"
+      />
+      <h1>MARWADI UNIVERSITY</h1>
+      <p>Faculty of Engineering</p>
+    </section>
+
+    <section class="about-section">
+      <div class="content-block">
+        <h2>Centre of Excellence</h2>
+        <p>
+          Awarded by the Government of Gujarat, this status places the
+          University among the top seven institutes in the state, recognizing
+          excellence in education, research, and high employability.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h2>NAAC A+ Accreditation</h2>
+        <p>
+          Marwadi University holds NAAC A+ [CGPA 3.31/4] Accreditation
+          (2023-2028), marking it as a top-tier institution in the region. Only
+          22% of Indian institutions achieve this grade.
+        </p>
+      </div>
+
+      <div class="content-block">
+        <h2>Institutional Impact & Benefits</h2>
+        <p>
+          NAAC A+ accreditation assures quality, offering students advantages
+          like:
+        </p>
+        <p>
+          &bull; Preferential startup funding and international placement
+          opportunities.
+        </p>
+        <p>&bull; Easier global mobility for higher studies.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>Commitment to Excellence</h2>
+        <p>
+          Focusing on a 3-level education approach, the university combines
+          theory with practical, industry-ready training. A 50-acre campus
+          supports holistic development with modern infrastructure and dedicated
+          sports facilities.
+        </p>
+      </div>
+    </section>
+
+    <section class="vision-mission-section">
+      <div class="vision-card" id="vision">
+        <h2>Our Vision</h2>
+        <p>
+          To cultivate an environment that empowers individuals, organizations,
+          and societies through education, innovative ideas, impactful research,
+          and transformative training.
+        </p>
+      </div>
+
+      <div class="vision-card" id="mission">
+        <h2>Our Mission</h2>
+        <p>
+          To provide quality education that fosters social transformation,
+          cultivates leadership through innovation and entrepreneurship,
+          advances research culture, promotes universal consciousness, and
+          drives growth through industrial and international partnerships.
+        </p>
+      </div>
+
+      <div class="vision-card">
+        <h2>Our Belief</h2>
+        <p>
+          We believe that active participation in local, national, and global
+          decision-making is essential for every student to achieve their full
+          potential and contribute meaningfully to the world.
+        </p>
+      </div>
+    </section>
+
+    <section class="pso-section" id="pso">
+      <h2>Program Specific Outcomes (PSOs)</h2>
+
+      <div class="pso-container">
+        <div class="pso-card">
+          <h3>PSO 1: Computer Science & Engineering</h3>
+          <p>
+            Design and develop secure, efficient, and scalable software systems,
+            intelligent applications, and computing solutions using
+            industry-standard tools and frameworks.
+          </p>
+          <p>
+            Apply Artificial Intelligence, Data Science, Cloud Computing,
+            Cybersecurity, and emerging technologies responsibly to create
+            innovative and sustainable solutions.
+          </p>
+        </div>
+
+        <div class="pso-card">
+          <h3>PSO 2: Electronics & Communication Engineering</h3>
+          <p>
+            <strong>Technical Proficiency:</strong> Design, develop, and
+            evaluate solutions in VLSI, chip design, IoT, 5G, next-generation
+            communication systems, and embedded systems.
+          </p>
+          <p>
+            <strong>Societal Impact:</strong> Innovate using modern tools to
+            develop intelligent systems while upholding ethical values and
+            addressing global sustainability goals.
+          </p>
+        </div>
+
+        <div class="pso-card">
+          <h3>PSO 3: Information & Communication Technology</h3>
+          <p>
+            Identify, analyze and solve real-time industry problems in software
+            development, embedded systems, VLSI design, IoT, and communication
+            technologies.
+          </p>
+          <p>
+            Contribute as an analyst and developer in cloud computing, DevOps,
+            security, machine learning, artificial intelligence, and big data
+            domains.
+          </p>
+        </div>
+
+        <div class="pso-card">
+          <h3>PSO 4: Mechanical Engineering</h3>
+          <p>
+            Acquire knowledge and skills in core mechanical systems to identify,
+            analyze, design, and develop machinery that directly addresses
+            modern societal needs.
+          </p>
+          <p>
+            Competently take on future technological engineering challenges such
+            as biofuel development, alternate energy, 3D printing, Robotics, and
+            Drones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses-section">
+      <h2>Courses Offered</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Academic Track</th>
+            <th>Offered Programs / Departments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Undergraduate (UG)</strong></td>
+            <td>
+              Engineering & Technology, Management Studies, Computer
+              Application, Law, Physiotherapy, Pharmacy, Science, Nursing, Arts
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Postgraduate (PG)</strong></td>
+            <td>
+              Engineering & Technology, Management Studies, Computer
+              Application, Law, Physiotherapy, Pharmacy, Science, Nursing, Arts
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Diploma Studies</strong></td>
+            <td>
+              Computer Engineering, Information & Communication Technology,
+              Chemical Engineering, Civil Engineering, Electrical Engineering,
+              Mechanical Engineering
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Centre for Distance & Online Education</strong></td>
+            <td>MBA, MCA, MA English, MSc Mathematics, BBA, BCA, B.Com</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <h2>Campus Gallery</h2>
+
+      <div class="gallery-container">
+        <img
+          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7NY6Sp8yGsBIaOXpcitIx1aCkiDtGdyVUH38WYGGyEmKtqTuo"
+          alt="img1"
+        />
+        <img
+          src="https://assets.kollegeapply.com/images/1751567020978-1532351620phpl73fjU.jpeg"
+          alt="img2"
+        />
+        <img
+          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSYmsF5du9xgJTQYeGbONXIm-KUB5kXl8-n4Be9BWSbqAsETinZ"
+          alt="img3”/>
+        <img
+          src="https://www.careermarg.com/uploads/college-image/t-1648985762-marwadi-university-mu-rajkot-rajkot.jpeg"
+          alt="img4"/>
+      </div>
+    </section>
+
+    <section class="recruiters-section" id="recruiters">
+      <h2>Our Top Placement Partners</h2>
+
+      <div class="recruiters-container">
+        <div class="recruiter-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_mlleyI5q-WGgT8NU3pPlaoL6FJ3-_Gt4u979J2Wg4n2uAFvLIADaPeU&s=10"
+            alt="Amazon Recruiter Logo"/>
+        </div>
+        <div class="recruiter-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+            alt="TCS Recruiter Logo"/>
+        </div>
+        <div class="recruiter-card">
+          <img
+            src="https://toppng.com/uploads/preview/infosys-limited-vector-logo-11574259008tncnrnxj7c.png"
+            alt="Infosys Recruiter Logo"/>
+        </div>
+        <div class="recruiter-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRur2TYIqpyuyEcYVVXGOqN3tyGR5srwZx25lKqR64zuA&s=10"
+            alt="Microsoft Recruiter Logo"/>
+        </div>
+        <div class="recruiter-card">
+          <img
+            src="https://substackcdn.com/image/fetch/$s_!1XDp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb162f2d8-7878-4f8c-9b3f-6184293024dc_1000x1000.jpeg"
+            alt="IBM Recruiter Logo"/>
+        </div>
+        <div class="recruiter-card">
+          <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8pYvK3HL2FPTkEu-yVAqJPNWgBAY0oOvjpOLw8c221Q&s=10"
+            alt="Cisco Recruiter Logo"/>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <address>
+          Rajkot-Morbi Road, At & PO Gauridad, Rajkot 360003, Gujarat, India
+        </address>
+        <p class="footer-phone">
+          Phone: <a href="tel:+912817123456">(+91) 2817123456</a>
+        </p>
+        <p class="footer-email">
+          Email:
+          <a href="info@marwadiuniversity.ac.in"
+            >info@marwadiuniversity.ac.in</a>
+        </p>
+        <p class="footer-copyright">
+          &copy; Marwadi University. All rights reserved, 2026.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
